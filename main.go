@@ -7,6 +7,7 @@ func main() {
 
 	wordOne, wordTwo := readWords("hi", "everyone")
 	sentence := turnIntoSentence(wordOne, wordTwo)
+	printALot(10, sentence)
 }
 
 func readWords(sOne, sTwo string) (string, string) {
@@ -18,4 +19,10 @@ func readWords(sOne, sTwo string) (string, string) {
 func turnIntoSentence(wOne, wTwo string) string {
 	fmt.Printf("%v %v", wOne, wTwo)
 	return fmt.Sprintf("%v %v", wOne, wTwo)
+}
+
+func printALot(times int, sentence string) {
+	for i := 0; i < times; i++ {
+		fmt.Println(sentence)
+	}
 }
