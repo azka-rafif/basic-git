@@ -4,21 +4,35 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
 )
 
 func main() {
 	fmt.Println("main")
 
 	scanner := bufio.NewScanner(os.Stdin)
+
 	fmt.Println("word one")
 	scanner.Scan()
-	fmt.Println("word two")
 	wordOne := scanner.Text()
+
+	fmt.Println("word two")
 	scanner.Scan()
 	wordTwo := scanner.Text()
+
 	wordOne, wordTwo = readWords(wordOne, wordTwo)
 	sentence := turnIntoSentence(wordOne, wordTwo)
-	printALot(10, sentence)
+
+	fmt.Println("Enter number of times to print: ")
+	scanner.Scan()
+	times, err := strconv.Atoi(scanner.Text())
+
+	if err != nil {
+		fmt.Println("Error: ", err)
+		return
+	}
+
+	printALot(times, sentence)
 }
 
 func readWords(sOne, sTwo string) (string, string) {
