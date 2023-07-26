@@ -17,7 +17,7 @@ func readWords(sOne, sTwo string) (string, string) {
 }
 
 func turnIntoSentence(wOne, wTwo string) string {
-	fmt.Printf("%v %v", wOne, wTwo)
+	fmt.Printf("%v %v\n", wOne, wTwo)
 	return fmt.Sprintf("%v %v", wOne, wTwo)
 }
 
