@@ -1,11 +1,22 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
 func main() {
 	fmt.Println("main")
 
-	wordOne, wordTwo := readWords("hi", "everyone")
+	scanner := bufio.NewScanner(os.Stdin)
+	fmt.Println("word one")
+	scanner.Scan()
+	fmt.Println("word two")
+	wordOne := scanner.Text()
+	scanner.Scan()
+	wordTwo := scanner.Text()
+	wordOne, wordTwo = readWords(wordOne, wordTwo)
 	sentence := turnIntoSentence(wordOne, wordTwo)
 	printALot(10, sentence)
 }
